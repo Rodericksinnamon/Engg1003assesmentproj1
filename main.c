@@ -1,12 +1,31 @@
 #include <stdio.h>
 
+
+
 int main()
 {
-  printf("THE CIPHER");
+   char str[27];
+   
+    int key;
+    
+    printf("Enter message to encrypt: ");
+    
+    scanf("%s", str);
+    
+    printf("Message entered %s ---> Enter key: ", str);
+    
+    scanf("%d", &key);
+    
+    while()
+    Str
+   
+    
   
-  int a = 1;
-  
-  printf("%d\n", a);
   
   return 0;
 }
+
+
+ 
+
+    
