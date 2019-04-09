@@ -1,18 +1,78 @@
 #include <stdio.h>
 
-
+char Encrypt(char string[1024], char c);
 
 int main()
 {
-   char str[27], cipher; //Two vaiables of tpe char. Str is string of message 26 characters long by user. assumed user will enter in capitals with no spaces.
-                            
-    int n, key; //N is used as counter for string, key is the rottion ammount
+   FILE *Text_to_Encrypt;
+
+   Text_to_Encrypt = fopen("Text_to_Encrypt.txt", "r");
+   
+    int key = 3; //key is the rotation ammount
+  char c;
+  
     
-    printf("ENTER MESSAGE TO ENCRYPT (MAX 26 LETTERS, NO SPACE, ALL CAPITALS): "); \\prompts user to input message
+//    printf("Enter the key --->");
+  //  scanf("%d", &key);
     
-    scanf("%s", str); \\gets message from user
+    while(feof(Text_to_Encrypt) == 0){
+       
+       char c;
+        
+        fscanf(Text_to_Encrypt, "%c", &c);
+
+        
+        if(c >= 'A' && c <= 'Z'){
+            
+            c = c + key;
+                printf("%c\n", c);  
+            
+  }      else if(c >= 'a' && c <= 'z'){
+            
+            c = c + key;
+               
+               printf("%c\n", c);  
+               
+        else if( )
+           
+           
+        }    
+       } 
     
-    printf("Message entered %s ---> Enter key(number of rotatoion ammount): ", str); // shows user what they entered, prompts user for encryption key
+
+             printf("%c\n", c);   
+    
+    
+    return 0;
+    
+}
+
+
+        
+        //store characters in a string and then operate on string
+    
+        
+    
+
+        
+    
+       
+   
+
+    
+         
+    
+
+        //Decryption
+
+        
+        
+        
+      
+    
+
+    
+   /*tf("Message entered %s ---> Enter key(number of rotatoion ammount): ", str); // shows user what they entered, prompts user for encryption key
     
     scanf("%d", &key); //gets key from user
     
@@ -24,12 +84,9 @@ int main()
         
        
    }
-   
-    
+*/ 
   
-  
-  return 0;
-}
+ 
 
 
  
