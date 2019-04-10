@@ -4,9 +4,41 @@ char Encrypt(char string[1024], char c);
 
 int main()
 {
-   FILE *Text_to_Encrypt;
+        
+    char choice;
+    
+    printf("welcome\n \n");
+    
+    printf("Select an option for Cipher and Cipher type:\n \nRotation Encyrption (a)\n \n");
+    printf("Substitution Encryption (b)\n \n");
+    printf("Rotation Decryption (c)\n \n");
+    printf("Substition Decryption (d) \n \n");
+    scanf("%c", &choice);
+    
+    switch(choice)
+    {
+                case 'a':
+                      printf("You selected Rotation Encryption\n");
+                    break;
+                    
+                case 'b':
+                      printf("You selected Substitution Encryption\n");
+                    break; 
+                
+                case 'c':
+                      printf("You selected Rotation Decryption\n");
+                     break;
+                     
+                case 'd':
+                      printf("You selected Substitution Decryption\n");
+                     break;
+                default:
+                    printf("Invalid choice\n");
+        } 
+    
+   FILE *Text;
 
-   Text_to_Encrypt = fopen("Text_to_Encrypt.txt", "r");
+   Text = fopen("Text.txt", "r");
    
     int key = 3; //key is the rotation ammount
   char c;
