@@ -1,11 +1,12 @@
 #include <stdio.h>
 
-//char RotationEncryption(char string[], int key);
+char RotationEncryption(char string[], int key);
 
 int main()
 {
         
     char choice;
+    //int key;
     
     printf("welcome\n \n");
     
@@ -14,11 +15,13 @@ int main()
     printf("Rotation Decryption (c)\n \n");
     printf("Substition Decryption (d) \n \n");
     scanf("%c", &choice);
+    //scanf("%d", &key);
+    
     
     switch(choice)
     {
                 case 'a':
-                      printf("You selected Rotation Encryption\n");
+                      printf("You selected Rotation Encryption\n \n Enter a key: \n");
                     break;
                     
                 case 'b':
@@ -26,7 +29,7 @@ int main()
                     break; 
                 
                 case 'c':
-                      printf("You selected Rotation Decryption\n");
+                      printf("You selected Rotation Decryption\n \n Enter a key: \n");
                      break;
                      
                 case 'd':
@@ -36,50 +39,28 @@ int main()
                     printf("Invalid choice\n");
         } 
     
-   FILE *Text;
-    char buffer[255];
+  
+                      
+        FILE *Text;
+        char Encrypt[255];
 
-   Text = fopen("Text.txt", "r");
-    fscanf(Text, "%s", buffer);
-    printf("1 : %s\n", buffer);
+        Text = fopen("Text.txt", "r");
+                            
+        fscanf(Text, "%s", Encrypt);
+     /* if(choice == 'a')
+      {
+        char RotationEncyption(char Encrypt[], int key);
+      } 
+*/
+        printf("%s", Encrypt);
     
-    fgets(buffer, 255, (FILE*)Text);
-    printf("2: %s\n", buffer);
+        fgets(Encrypt, 255, (FILE*)Text);
+            
+       printf("%s\n", Encrypt);
     
-    fgets(buffer, 255, (FILE*)Text);
-    printf("3: %s\n", buffer);
+  
     fclose(Text);
     
-   
-   
-   
-   
-   // while(feof(Text) == 0){
-       
-      /* char c;
-        
-        fscanf(Text_to_Encrypt, "%c", &c);
-
-        
-        if(c >= 'A' && c <= 'Z'){
-            
-            c = c + key;
-                printf("%c\n", c);  
-            
-  }      else if(c >= 'a' && c <= 'z'){
-            
-            c = c + key;
-               
-               printf("%c\n", c);  
-               
-        else if( )
-           
-           
-        }    
-       } 
-    
-
-             printf("%c\n", c);   */
     
     
     return 0;
@@ -88,11 +69,42 @@ int main()
 
 /*char RotationEncryption(char string[], int key)
 {
+    int index;
+    char cipher;
     
+    for(index = 0; string[index] != '\0'; ++index)
+    {
+        cipher = string[index];
+        
+        if(cipher >= 'a' && cipher <= 'z')
+        {
+            cipher = cipher + key;
+                
+                if(cipher > 'z')
+                {
+                    cipher = cipher - 'z' + 'a' - 1;
+                }
+                
+                string[index] = cipher;
+        }
+        else if(cipher >= 'A' && cipher <= 'Z')
+        {
+            cipher = cipher + key;
+            
+            if(cipher > 'Z')
+            {
+                cipher = cipher - 'Z' + 'A' - 1;
+            }
+            
+            string[index] = cipher;
+        }
+    }
+    
+    return string[index];
     
 }
-
 */
+
         
         //store characters in a string and then operate on string
     
