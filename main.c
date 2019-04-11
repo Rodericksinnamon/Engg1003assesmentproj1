@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-char Encrypt(char string[1024], char c);
+//char RotationEncryption(char string[], int key);
 
 int main()
 {
@@ -37,19 +37,26 @@ int main()
         } 
     
    FILE *Text;
+    char buffer[255];
 
    Text = fopen("Text.txt", "r");
+    fscanf(Text, "%s", buffer);
+    printf("1 : %s\n", buffer);
+    
+    fgets(buffer, 255, (FILE*)Text);
+    printf("2: %s\n", buffer);
+    
+    fgets(buffer, 255, (FILE*)Text);
+    printf("3: %s\n", buffer);
+    fclose(Text);
+    
    
-    int key = 3; //key is the rotation ammount
-  char c;
-  
-    
-//    printf("Enter the key --->");
-  //  scanf("%d", &key);
-    
-    while(feof(Text_to_Encrypt) == 0){
+   
+   
+   
+   // while(feof(Text) == 0){
        
-       char c;
+      /* char c;
         
         fscanf(Text_to_Encrypt, "%c", &c);
 
@@ -72,14 +79,20 @@ int main()
        } 
     
 
-             printf("%c\n", c);   
+             printf("%c\n", c);   */
     
     
     return 0;
     
 }
 
+/*char RotationEncryption(char string[], int key)
+{
+    
+    
+}
 
+*/
         
         //store characters in a string and then operate on string
     
