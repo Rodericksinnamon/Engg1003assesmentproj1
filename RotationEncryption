@@ -1,0 +1,74 @@
+# include <stdio.h>
+
+char encryption_rotation(char [], int);
+
+void upper_string(char []);
+
+int main() 
+{
+    int key = 1;
+    
+          char string[255] = "The end is near??....///!!"; 
+          
+          upper_string(string);
+          
+          encryption_rotation(string, key);
+                        
+                        
+          
+    
+          
+        
+                       //FILE *ENCRYPTED;
+                    
+                    /*ENCRYPTED = fopen("ENCRYPTED.txt", "w+");
+                    fprintf(char *string, FILE *ENCRYPT);*/
+                    
+                    printf("%s\n", string);
+                    
+        return 0;
+        
+}
+
+char encryption_rotation(char s[], int a)
+{
+        char cipher;
+         int i;
+      
+    
+    for(i = 0; s[i] != '\0'; ++i)
+    {
+            cipher = s[i];
+            
+        if(cipher >= 'A' && cipher <= 'Z')
+             {
+                 cipher = cipher + a;
+             }                  
+
+         else if(cipher > 'Z')
+            {
+                cipher = cipher - 'Z' + 'A' - 1;
+            }
+            else
+            {
+                cipher = cipher + 0;
+            }
+            
+            s[i] = cipher;
+            
+}        
+            
+        return s[i];
+
+}
+
+void upper_string(char s[]) {
+   int n = 0;
+   
+   while (s[n] != '\0') {
+      if (s[n] >= 'a' && s[n] <= 'z') {
+         s[n] = s[n] - 32;
+      }
+      n++;
+   }
+}
