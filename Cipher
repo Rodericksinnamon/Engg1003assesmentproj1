@@ -1,0 +1,241 @@
+ # include <stdio.h>
+
+char encryption_rotation(char [], int);
+
+char decryption_rotation(char [],int);
+
+char encryption_substitution(char [], char[]);
+
+void upper_string(char []);
+
+int main() 
+{
+    
+    
+    char string[] = "Encode this with a subsitution!-_-";
+    
+    char sub[] = "QWERTYUIOPASDFGHJKLZXCVBNM";
+    
+    upper_string(string);
+    
+ 
+        
+    //int key =  3;
+    
+            //char string[] = "KHOOR ULFKDUG";
+          
+          upper_string(string);
+          
+          //encryption_rotation(string, key);
+          
+          //decryption_rotation(string, key);
+            
+            encryption_substitution(string, sub);
+                    
+                    printf("%s\n", string);
+                    
+        return 0;
+        
+}
+
+char encryption_rotation(char s[], int a)
+{
+        char cipher;
+         int i;
+      
+    
+    for(i = 0; s[i] != '\0'; ++i)
+    {
+            cipher = s[i];
+            
+        if(cipher >= 'A' && cipher <= 'Z')
+             {
+                 cipher = cipher + a;
+             }                  
+
+         else if(cipher > 'Z')
+            {
+                cipher = cipher - 'Z' + 'A' - 1;
+            }
+            else
+            {
+                cipher = cipher + 0;
+            }
+            
+            s[i] = cipher;
+            
+}        
+            
+        return s[i];
+
+}
+
+char decryption_rotation(char s[],int a)
+{
+          char cipher;
+         int i;
+      
+      
+    
+    for(i = 0; s[i] != '\0'; ++i)
+    {
+            cipher = s[i];
+            
+      switch(cipher)
+      {
+        
+        case ':':
+                s[i] = cipher;
+        
+        case ' ':
+                s[i] = cipher;
+               
+        case '.':
+                s[i] = cipher;
+               
+        case '?':
+                s[i] = cipher;
+               
+        case ',':
+                s[i] = cipher;
+              
+        default:
+                cipher = cipher;
+        }    
+
+        if(cipher >= 'A' && cipher <= 'Z')
+             {
+                 cipher = cipher - a;                  
+
+           if(cipher < 'A')
+            {
+                cipher = cipher + 'Z' - 'A' + 1;
+            }
+
+            else
+            {
+                s[i] = cipher;
+            }
+       } 
+            else 
+            {
+                s[i] = cipher;
+            }
+            
+            s[i] = cipher;       
+
+}        
+            
+        return s[i];
+}
+
+char encryption_substitution(char s[], char sub[])
+{
+    char cipher;
+    int i;
+    
+       for(i = 0; s[i] != '\0'; ++i)
+    {
+            cipher = s[i];
+            
+        switch(cipher)
+        {
+            case 'A':
+                     cipher = sub[0];
+                     break;
+            case 'B':
+                     cipher = sub[1];
+                     break;
+            case 'C':
+                     cipher = sub[2];
+                     break;
+            case 'D':
+                     cipher = sub[3];
+                     break;
+            case 'E':
+                     cipher = sub[4];
+                     break;
+            case 'F':
+                     cipher = sub[5];
+                     break;
+            case 'G':
+                     cipher = sub[6];
+                     break;
+            case 'H':
+                     cipher = sub[7];
+                     break;
+            case 'I':
+                     cipher = sub[8];
+                     break;
+            case 'J':
+                     cipher = sub[9];
+                     break;
+            case 'K':
+                     cipher = sub[10];
+                     break;
+            case 'L':
+                     cipher = sub[11];
+                     break;
+            case 'M':
+                     cipher = sub[12];
+                     break;
+            case 'N':
+                     cipher = sub[13];
+                     break;
+            case 'O':
+                     cipher = sub[14];
+                     break;
+            case 'P':
+                     cipher = sub[15];
+                     break;
+            case 'Q':
+                     cipher = sub[16];
+                     break;
+            case 'R':
+                     cipher = sub[17];
+                     break;
+            case 'S':
+                     cipher = sub[18];
+                     break;
+            case 'T':
+                     cipher = sub[19];
+                     break;
+            case 'U':
+                     cipher = sub[20];
+                     break;
+            case 'V':
+                     cipher = sub[22];
+                     break;
+            case 'W':
+                     cipher = sub[22];
+                     break;
+            case 'X':
+                     cipher = sub[23];
+                     break;
+            case 'Y':
+                     cipher = sub[24];
+                     break;
+            case 'Z':
+                     cipher = sub[25];
+                     break;         
+            default:
+                     cipher = cipher;
+        }     
+    s[i] = cipher;  
+    }
+    return s[i];
+}
+
+void upper_string(char s[]) 
+{
+   int n = 0;
+   
+   while (s[n] != '\0') 
+   {
+      if (s[n] >= 'a' && s[n] <= 'z') 
+      {
+         s[n] = s[n] - 32;
+      }
+      n++;
+   }
+}
